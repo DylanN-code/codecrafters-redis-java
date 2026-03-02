@@ -75,45 +75,45 @@ This project is a Redis server implementation in **Java**, built from scratch as
 
    ```bash
    # send 1 command PING in 1 request
-   $ redis-cli echo -e "PING" | redis-cli
+   $ echo -e "PING" | redis-cli
    PONG
 
    # send multiple commands PING in 1 request
-   $ redis-cli echo -e "PING\nPING" | redis-cli
+   $ echo -e "PING\nPING" | redis-cli
    PONG
    PONG
 
    # send 1 command PING in 1 request and concurrently
-   $ redis-cli echo -e "PING" | redis-cli; echo -e "PING" | redis-cli
+   $ echo -e "PING" | redis-cli; echo -e "PING" | redis-cli
    PONG
    PONG
 
    # send 1 command ECHO in 1 request
-   $ redis-cli echo -e "ECHO hey" | redis-cli
+   $ echo -e "ECHO hey" | redis-cli
 
    # send 1 command SET in 1 request
    # then send 1 command GET in another request
-   $ redis-cli echo -e "SET foo bar" | redis-cli
+   $ echo -e "SET foo bar" | redis-cli
    OK
-   $ redis-cli echo -e "GET foo" | redis-cli
+   $ echo -e "GET foo" | redis-cli
    bar
-   $ redis-cli echo -e "GET hello" | redis-cli
+   $ echo -e "GET hello" | redis-cli
    (nil)
 
    # send 1 command SET in 1 request with expiry
    # then immediately send 1 command GET in another request
-   $ redis-cli echo -e "SET foo bar PX 100" | redis-cli; echo -e "GET foo" | redis-cli
+   $ echo -e "SET foo bar PX 100" | redis-cli; echo -e "GET foo" | redis-cli
    OK
    "bar"
 
    # send 1 command SET in 1 request with expiry
    # then sleep for 0.2 sec then send 1 command GET in another request
-   $ redis-cli echo -e "SET foo bar PX 100" | redis-cli; sleep 0.2; echo -e "GET foo" | redis-cli
+   $  echo -e "SET foo bar PX 100" | redis-cli; sleep 0.2; echo -e "GET foo" | redis-cli
    OK
    (nil)
 
    # send 1 command INFO in 1 request to a Master node about its replication setup
-   $ redis-cli echo -e "info replication" | redis-cli
+   $ echo -e "info replication" | redis-cli
    role:master
    master_replid:qk7ah4jae1nyyyq979mbsgbta09rierunnq74158
    master_repl_offset:0%
@@ -260,7 +260,7 @@ This project is a Redis server implementation in **Java**, built from scratch as
 
 2. Stress Test
 
-3. Analysis
+4. Analysis
 
 ---
 
